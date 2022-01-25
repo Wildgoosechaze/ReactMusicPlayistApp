@@ -15,13 +15,13 @@ renderAction() {
 render() {
  return  <div className="Track">
     <div className="Track-information">
-      <h3>Track Name</h3>
-      <p>track artist | track album</p> 
+      <h3>hi</h3>
+      <p> song | album </p> 
     </div>
     {this.renderAction()}
   </div>
 }
 
-}
+};
 
-export default Track;
+export  default Track;
