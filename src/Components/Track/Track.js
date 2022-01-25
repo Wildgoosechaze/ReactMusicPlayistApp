@@ -5,10 +5,9 @@ import './Track.css'
 export class Track extends React.Component {
 
 renderAction() {
-  let minusPlus = isRemoval ? '-' : '+'
+  let minusPlus = this.props.isRemoval ? <button className="Track-action">-</button> : <button className="Track-action">+</button>
   
-  return 
- <button className="Track-Action">{minusPlus}</button>
+  return minusPlus
 }
 
 render() {
@@ -17,7 +16,7 @@ render() {
       <h3>{/* <!-- track name will go here --> */}</h3>
       {/* <p><!-- track artist will go here--> | <!-- track album will go here --></p> */}
     </div>
-    {this.renderAction}
+    {this.renderAction()}
   </div>
 }
 
