@@ -24,4 +24,3 @@ render() {
 
 };
 
-export  default Track;

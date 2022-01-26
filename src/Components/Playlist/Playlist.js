@@ -4,6 +4,7 @@ import {TrackList} from '../TrackList/TrackList'
 export class Playlist extends React.Component {
 
 render() {
+  // console.log(this.state)
 return <div className="Playlist">
     <input defaultValue={"New Playlist"}/>
    <TrackList tracks={this.props.searchResults} />
