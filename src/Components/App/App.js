@@ -8,7 +8,8 @@ import React from 'react';
 export class App extends React.Component {
 constructor(props) {
   super(props);
-  this.addTrack = this.addTrack.bind(this)
+  this.addTrack = this.addTrack.bind(this);
+  this.removeTrack =this.removeTrack.bind(this);
   this.state = {
     searchResults: [
     {name: 'name1', artist: 'artist1', album: 'album1', id: 1}, 
@@ -53,7 +54,8 @@ render() {
                     searchResults={this.state.searchResults} />
       <Playlist playlistTracks={this.state.playlistTracks} 
                 playlistName={this.state.playlistName} 
-                searchResults={this.state.searchResults}/>   
+                searchResults={this.state.searchResults}
+                onRemove={this.removeTrack} />   
       </div>
   </div>
 </div>
