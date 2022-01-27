@@ -20,7 +20,7 @@ constructor(props){
 renderAction() {
   if(this.props.isRemoval) {
    return <button onClick={this.removeTrack} className="Track-action">remove</button>
-  } else if (!this.props.isRemoval) {
+  } else {
     return <button onClick={this.addtrack} className="Track-action">add</button>
   }
 }
