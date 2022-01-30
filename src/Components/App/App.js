@@ -33,6 +33,7 @@ export class App extends React.Component {
 }
 // App Methods
 
+
 search(term) {
 Spotify.search(term).then(searchResults => {
   this.setState({ searchResults: searchResults })
@@ -41,9 +42,15 @@ Spotify.search(term).then(searchResults => {
 
 savePlaylist() {
 // alert('button works alert')
-  let trackURIs = [];
-  trackURIs = this.props.playlistTracks.map(track => track.uri)
-  return trackURIs
+  
+  const trackURIs = this.props.playlistTracks.map(track => track.uri)
+  Spotify.savePlaylist(this.state.playlistName, trackURIs).then(()=> {
+    this.setState({
+      playlistName: 'New Playlist',
+      playlistTracks: []
+    })
+  })
+  
 }
 
 updatePlaylistName(name) {
