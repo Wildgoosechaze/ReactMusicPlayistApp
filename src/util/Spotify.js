@@ -1,13 +1,13 @@
 
 const clientID = '9893717cff9949409acdbf08d2e0755b'
 const redirectURI = 'http://localhost:3000/'
+let accessToken;
 
 
 
-let accessToken = {};
-const Spotify = {};
+const Spotify = {
 
-const getAccessToken = () => {
+ getAccessToken ()  {
     if(accessToken) {
         return accessToken;
     } 
@@ -19,18 +19,19 @@ const getAccessToken = () => {
     if (accessTokenMatch && expiresInMatch) {
         accessToken = accessTokenMatch[1];
         const expiresIn = Number(expiresInMatch[1]);
-        
-        const accessURL = `https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectURI}`;
-        window.location = accessURL
-        
-        
+         
         // This clears the paremeters, allows grabbing a new access token when it expires
         window.setTimeout(() => accessToken = '', expiresIn * 1000);
         window.history.pushState('Access Token', null, '/');
         return accessToken
 
+    } else {
+        // redirects user to accessURL
+        const accessURL = `https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectURI}`;
+        window.location = accessURL
     }
 }
 
+}
 
 export default Spotify;
