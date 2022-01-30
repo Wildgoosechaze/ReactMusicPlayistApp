@@ -3,7 +3,7 @@ import {SearchBar} from '../SearchBar/SearchBar';
 import {Playlist} from '../Playlist/Playlist';
 import {SearchResults} from '../SearchResults/SearchResults';
 import React from 'react';
-
+import {Spotify} from '../../util/Spotify';
 
 export class App extends React.Component {
 // App constructor and bindings
@@ -34,7 +34,9 @@ export class App extends React.Component {
 // App Methods
 
 search(term) {
-console.log(term)
+Spotify.search(term).then(searchResults => {
+  this.setState({ searchResults: searchResults })
+})
 }
 
 savePlaylist() {
