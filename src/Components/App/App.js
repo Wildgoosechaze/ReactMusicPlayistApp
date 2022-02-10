@@ -34,7 +34,7 @@ Spotify.search(term).then(searchResults => {
 savePlaylist() {
 // alert('button works alert')
   
-  const trackURIs = this.props.playlistTracks.map(track => track.uri)
+  const trackURIs = this.state.playlistTracks.map(track => track.uri)
   Spotify.savePlaylist(this.state.playlistName, trackURIs).then(()=> {
     this.setState({
       playlistName: 'New Playlist',

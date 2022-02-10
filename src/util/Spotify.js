@@ -68,8 +68,8 @@ search(term) {
 
 //          Create playlist post request
            return fetch('https://api.spotify.com/v1/me', {headers: headers} ) //  GETS user ID
-           .then(response => { 
-               response.json()})
+           .then(response =>  
+               response.json())
                .then( jsonResponse => {
                    userID = jsonResponse.id
                    return fetch(`https://api.spotify.com/v1/users/${userID}/playlists`,     // POST new playlist to user account && Recieves a playlist id for new playlist 
@@ -81,7 +81,7 @@ search(term) {
                    .then(response => response.json())
                     .then(jsonResponse => {
                         const playlistID =jsonResponse.id
-                        return fetch(`/v1/users/${userID}/playlists/${playlistID}/tracks`,     // POSTs tracks to playlist 
+                        return fetch(`https://api.spotify.com/v1/users/${userID}/playlists/${playlistID}/tracks`,     // POSTs tracks to playlist 
                         {   method: 'POST' ,
                             headers: headers,
                             body: JSON.stringify({
