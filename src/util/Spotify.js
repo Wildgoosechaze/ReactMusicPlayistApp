@@ -1,6 +1,6 @@
 
 const clientID = '9893717cff9949409acdbf08d2e0755b'
-const redirectURI = 'Isssa-Bop.surge.sh'
+const redirectURI = 'Http://Isssa-Bop.surge.sh/'
 let accessToken;
 
 
