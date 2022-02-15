@@ -22,6 +22,7 @@ export class App extends React.Component {
   playlistTracks : []
 }
 }
+
 // App Methods
 
 
@@ -70,7 +71,7 @@ addTrack(track) {
 
 render() {
   return    <div>
-  <h1>Ja<span className="highlight">mmm</span>ing</h1>
+  <h1>I<span className="highlight">sss</span>a Bop</h1>
   <div className="App">
     <SearchBar onSearch ={this.search} />
     <div className="App-playlist">
@@ -83,6 +84,7 @@ render() {
                 onNameChange={this.updatePlaylistName}
                 onSave={this.savePlaylist} />   
       </div>
+      <a class="attribute" href="https://www.flaticon.com/free-icons/play" title="play icons">Play icons created by Freepik</a>
   </div>
 </div>
     
